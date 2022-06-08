@@ -1,0 +1,8 @@
+## 1 Getting input data from Forms
+
+- Implemented
+  => "SimpleInput.js" (useRef, useState to get input data)
+
+  - useRef => Good for only taking the input data
+
+  - useState => Good for logging every key input and clearing input
