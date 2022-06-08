@@ -6,3 +6,23 @@
   - useRef => Good for only taking the input data
 
   - useState => Good for logging every key input and clearing input
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+## 2 Adding validation Feedback with "useState"
+
+- Implemented
+  => "SimpleInput.js" (using useState(false/true) to toggle err message and "classNames")
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+## 3 Handling/Using "was Touched" (useState)
+
+A cleaner way of validating "##2"
+
+- Implemented
+  => "SimpleInput.js" (useState() to create "wasTouched" state to determine if the user has input anything before setting validation to (true))
+
+\***\* IMPORTANT \*\*** To skip this #3
+
+- Set useState(null) => So it wont start as "true/false"
