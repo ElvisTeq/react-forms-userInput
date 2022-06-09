@@ -50,3 +50,15 @@ Was used in a button
 
 --------------------------- cursor: not-allowed;
 CSS style
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+## 6 dealing with duplication code with a custom hook
+
+- Created
+  => "use-input.js" (Custom hook to handle all functionality of "SimpleInput.js")
+
+**\*** We can Re-Use Custom Hooks **\***
+
+- Example
+  => "SimpleInput.js" (Created another object using the custom hook for the email)
