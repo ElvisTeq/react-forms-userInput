@@ -62,3 +62,10 @@ CSS style
 
 - Example
   => "SimpleInput.js" (Created another object using the custom hook for the email)
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+## 7 Using useReducer (bonus practice)
+
+- Implemented
+  => "use-input.js" (Refactored code with useReducer)
