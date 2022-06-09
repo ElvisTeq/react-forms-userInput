@@ -36,3 +36,17 @@ A cleaner way of validating "##2", in order for "useState(false)" as default
 
 ------------------------------------------------------------- onBlur={}
 React JSX build in Event (When input losses focus)
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+## 5 Managing overall form Validity (disabling submit button)
+
+- Implemented
+  => "SimpleInput.js" (Disabling Button based on form Validation)
+
+------------------------------------------------------------- disabled={true/false}
+React JSX build in Event (To enable/disable)
+Was used in a button
+
+--------------------------- cursor: not-allowed;
+CSS style

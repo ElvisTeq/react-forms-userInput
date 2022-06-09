@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const SimpleInput = (props) => {
   const [enteredName, setEnteredName] = useState("");
@@ -11,6 +11,14 @@ const SimpleInput = (props) => {
   // true (default) => show invalid
   // false => valid
   const nameInputIsInvalid = !enteredNameIsValid && enteredNameTouched;
+
+  // True/False => will hide submit button
+  let formIsValid = false;
+
+  // Validating form to toggle submit button
+  if (enteredNameIsValid) {
+    formIsValid = true;
+  }
 
   // useState => Will log/store every key input "onChange"
   const nameInputChangeHandler = (event) => {
@@ -61,7 +69,7 @@ const SimpleInput = (props) => {
         )}
       </div>
       <div className="form-actions">
-        <button>Submit</button>
+        <button disabled={!formIsValid}>Submit</button>
       </div>
     </form>
   );
