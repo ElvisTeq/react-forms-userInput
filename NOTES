@@ -18,11 +18,21 @@
 
 ## 3 Handling/Using "was Touched" (useState)
 
-A cleaner way of validating "##2"
+A cleaner way of validating "##2", in order for "useState(false)" as default
 
 - Implemented
-  => "SimpleInput.js" (useState() to create "wasTouched" state to determine if the user has input anything before setting validation to (true))
+  => "SimpleInput.js" (useState() to create "wasTouched" state to determine if the user has input anything before setting "useState(true)" )
 
 \***\* IMPORTANT \*\*** To skip this #3
 
 - Set useState(null) => So it wont start as "true/false"
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+## 4 React onBlur (on loost Focus)
+
+- Implemented
+  => "SimpleInput.js" (Show error when input is wrong and looses focus)
+
+------------------------------------------------------------- onBlur={}
+React JSX build in Event (When input losses focus)

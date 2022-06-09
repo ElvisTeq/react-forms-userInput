@@ -1,22 +1,25 @@
-import { useRef, useState, useEffect } from "react";
+import { useState } from "react";
 
 const SimpleInput = (props) => {
-  const nameInputRef = useRef();
   const [enteredName, setEnteredName] = useState("");
-  // True/False => toggle err message and "classNames"
-  const [enteredNameIsValid, setEnteredNameIsValid] = useState(false); // useState(null) => To skip "useState from below"
+
   // True/False => determine if the user has done/touched anything before toggling "messages & classNames"
   const [enteredNameTouched, setEnteredNameTouched] = useState(false); // Only true => if (input.value in form)
 
-  useEffect(() => {
-    if (enteredNameIsValid) {
-      console.log("Name input is Valid!");
-    }
-  }, [enteredNameIsValid]);
+  const enteredNameIsValid = enteredName.trim() !== "";
+
+  // true (default) => show invalid
+  // false => valid
+  const nameInputIsInvalid = !enteredNameIsValid && enteredNameTouched;
 
   // useState => Will log/store every key input "onChange"
   const nameInputChangeHandler = (event) => {
     setEnteredName(event.target.value);
+  };
+
+  // onBlur => function
+  const nameInputBlurHandler = (event) => {
+    setEnteredNameTouched(true);
   };
 
   const formSubmissionHandler = (event) => {
@@ -24,26 +27,17 @@ const SimpleInput = (props) => {
 
     setEnteredNameTouched(true);
 
-    if (enteredName.trim() === "") {
-      setEnteredNameIsValid(false);
+    if (!enteredNameIsValid) {
       return;
     }
-    setEnteredNameIsValid(true);
 
-    // useState
     console.log(enteredName);
 
-    // useRef
-    const enteredValue = nameInputRef.current.value; // Get current input value with ref "onSubmit"
-    console.log(enteredValue);
-
     // nameInputRef.current.value = ''; => NOT IDEAL, DON'T MANIPULATE THE DOM
-    setEnteredName("");
-  };
 
-  // true (default) => show invalid
-  // false => valid
-  const nameInputIsInvalid = !enteredNameIsValid && enteredNameTouched;
+    setEnteredName(""); // Reset Input Value on submit
+    setEnteredNameTouched(false); // Reset Touched on submit
+  };
 
   // true/false => toggle "className"
   const nameInputClasses = nameInputIsInvalid
@@ -55,10 +49,11 @@ const SimpleInput = (props) => {
       <div className={nameInputClasses}>
         <label htmlFor="name">Your Name</label>
         <input
-          ref={nameInputRef}
+          // ref={nameInputRef}
           type="text"
           id="name"
           onChange={nameInputChangeHandler}
+          onBlur={nameInputBlurHandler}
           value={enteredName}
         />
         {nameInputIsInvalid && (
